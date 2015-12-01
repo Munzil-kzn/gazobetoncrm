@@ -1,3 +1,4 @@
+//Берем данные через форму
 <?php 
 	$name = $_POST['name'];
         $manager = $_POST['manager'];
@@ -42,7 +43,7 @@
         mysql_connect("localhost", "user8026_20", "123qwe") or die (mysql_error ());
 	mysql_select_db("user8026_20") or die(mysql_error());
        
-
+//И записываем их в базу
 	$strSQL = "INSERT INTO allorder(nameClient,nameManager,adress,phone,wh,lh,hh,depth,ww,lw,kw,wd,ld,kd,ww2,lw2,kw2,wd2,ld2,kd2,ww3,lw3,kw3,wd3,ld3,kd3,ww4,lw4,kw4,wd4,ld4,kd4,data,status,comment,product,okon,dver) VALUES('$name','$manager','$adress','$phone','$wh','$lh','$hh','$depth','$ww','$lw','$kw','$wd','$ld','$kd','$ww2','$lw2','$kw2','$wd2','$ld2','$kd2','$ww3','$lw3','$kw3','$wd3','$ld3','$kd3','$ww4','$lw4','$kw4','$wd4','$ld4','$kd4','$today','$status','$comment','$product','$okon','$dver')";
 	mysql_query($strSQL) or die (mysql_error());
 	mysql_close();
